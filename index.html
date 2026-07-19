@@ -181,7 +181,7 @@ th{
 <script>
 
 const API =
-"https://script.google.com/macros/s/AKfycbzSQ9oqqo1p-1YZZ-32MNfj0wlWiOjG9i0nYvTSjnJRVAwdAVYPaS2vpdqOcndCJ6kb/exec";
+"https://script.google.com/macros/s/AKfycbwZ0s_b0ykjtBCpj5meqqHYmJiAEGRPX83LCWwGdZICkctdgwP7sAuQFa10cy6QyiP5/exec";
 
 const statusList = [
 
@@ -382,7 +382,27 @@ const data = {
     ).value,
 
     observasi:
-    dataSiswa
+    dataSiswa,
+
+    deviceId:
+(
+    window.Android &&
+    typeof Android.getDeviceId === "function"
+)
+?
+Android.getDeviceId()
+:
+"",
+
+deviceName:
+(
+    window.Android &&
+    typeof Android.getDeviceName === "function"
+)
+?
+Android.getDeviceName()
+:
+""
 
 };
 
