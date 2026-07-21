@@ -94,6 +94,11 @@ th{
     background:#cfe2ff;
 }
 
+.btn-aktif{
+    background:#198754 !important;
+    color:white !important;
+    transition:0.3s;
+}
 </style>
 </head>
 <body>
@@ -152,11 +157,11 @@ th{
     
 <input type="date" id="tanggal">
 
-<button onclick="simpan()">
+<button id="btnSimpan" onclick="simpan()">
 💾 Simpan
 </button>
 
-<button onclick="downloadCSV()">
+<button id="btnDownload" onclick="downloadCSV()">
 📥 Download
 </button>
 
@@ -417,6 +422,7 @@ await fetch(
     }
 );
 
+flashButton("btnSimpan");
 
     }catch(err){
 
@@ -476,6 +482,8 @@ await fetch(
 
 Android.downloadCSV(csv);
 
+flashButton("btnDownload");
+
     }catch(err){
 
 
@@ -500,7 +508,18 @@ function(){
     loadSiswa();
 
 }
+function flashButton(id){
 
+    const btn =
+    document.getElementById(id);
+
+    btn.classList.add("btn-aktif");
+
+    setTimeout(()=>{
+        btn.classList.remove("btn-aktif");
+    },5000);
+
+}
 </script>
 
 </body>
