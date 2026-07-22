@@ -352,7 +352,7 @@ function tambahPoint(
 // SIMPAN
 // ========================
 async function simpan(){
-
+flashButton("btnSimpan");
 let mapel =
 document.getElementById(
     "mapel"
@@ -422,7 +422,6 @@ await fetch(
     }
 );
 
-flashButton("btnSimpan");
 
     }catch(err){
 
@@ -435,7 +434,7 @@ flashButton("btnSimpan");
 // DOWNLOAD REKAP
 // ========================
 async function downloadCSV(){
-
+flashButton("btnDownload");
 let mapel =
 document.getElementById(
     "mapel"
@@ -481,8 +480,6 @@ await fetch(
         });
 
 Android.downloadCSV(csv);
-
-flashButton("btnDownload");
 
     }catch(err){
 
